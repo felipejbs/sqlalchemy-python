@@ -1,7 +1,7 @@
-from sqlalchemy import ForeignKey, creat_engine, Column, String, Integer, Boolean
+from sqlalchemy import ForeignKey, create_engine, Column, String, Integer, Boolean
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-db = creat_engine("sqlite:///meubanco.db")
+db = create_engine("sqlite:///meubanco.db")
 Session = sessionmaker(bind=db)
 session = Session
 
@@ -39,29 +39,4 @@ class Livro(Base):
         self.dono
 
 
-Base.metadata_create_all(bind=db)
-
-
-# CRUD
-
-# Create
-usuario = Usuario(nome="Felipe", email="teste@email.com", senha="123456")
-session.add(Usuario)
-session.commit()
-
-usuario_felipe = session.query(Usuario).filter_by(email="teste@email.com").first()
-livro = Livro(nome="O Hobbit", qtd_paginas=227, dono=usuario_felipe.id)
-session.add(livro)
-session.commit()
-# Read
-lista_usuarios = session.query(Usuario).all()
-#Update
-usuario_felipe.nome = "Felipe Silva"
-session.add(Usuario)
-session.commit()
-
-
-# Delete
-usuario_felipe2 = session.query(Usuario).filter_by(email="teste@email.com").first()
-session.delete(usuario_felipe2)
-session.commit()
+Base.metadata.create_all(bind=db)
