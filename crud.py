@@ -3,7 +3,6 @@ from main import *
 # CRUD
 
 # C - Create
-
 usuario = Usuario(nome="Felipe", email="teste@email.com", senha="123456")
 session.add(Usuario)
 session.commit()
