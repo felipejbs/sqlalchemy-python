@@ -1,7 +1,5 @@
 # Utilizando SQLAlchemy para criação de banco de dados
 
-# Utilizando SQLAlchemy para criação de banco de dados
-
 Este projeto demonstra como utilizar o SQLAlchemy para criar e manipular um banco de dados SQLite. Ele inclui a definição de tabelas, operações CRUD (Create, Read, Update, Delete) e exemplos práticos de uso.
 
 ## Estrutura do Projeto
